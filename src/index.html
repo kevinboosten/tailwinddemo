@@ -1,0 +1,107 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="../dist/output.css" rel="stylesheet" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!--
+  Welcome to Tailwind Play, the official Tailwind CSS playground!
+
+  Everything here works just like it does when you're running Tailwind locally
+  with a real build pipeline. You can customize your config file, use features
+  like `@apply`, or even add third-party plugins.
+
+  Feel free to play with this example if you're just learning, or trash it and
+  start from scratch if you know enough to be dangerous. Have fun!
+-->
+    <div class="min-h-screen bg-gray-50 py-6 flex flex-col justify-center relative overflow-hidden sm:py-12">
+      <!-- product card -->
+      <div
+        class="relative px-6 pt-10 pb-8 bg-red shadow-xl ring-1 ring-gray-900/5 sm:max-w-lg sm:mx-auto sm:rounded-lg sm:px-10 dark:bg-slate-600 dark:text-white"
+      >
+        <div class="max-w-md mx-auto grid grid-flow-col grid-cols-2 grid-rows-2">
+          <!-- phone -->
+          <div class="w-3/4 h-full relative">
+            <img
+              class="h-auto left-0"
+              src="https://www.t-mobile.nl/Consumer/media/images/_mobiel/alle-telefoons/apple/iphone-13/iPhone13/dvi-back_iPhone13_Black_305x450.png"
+              alt=""
+            />
+            <img
+              class="absolute h-auto top-0 left-0 translate-x-8 hover:translate-x-12 transition"
+              src="https://www.t-mobile.nl/Consumer/media/images/_mobiel/alle-telefoons/apple/iphone-13/iPhone13/dvi-front_iPhone13_Black_305x450.png"
+              alt=""
+            />
+          </div>
+          <!-- /phone -->
+
+          <!-- colors -->
+          <div class="flex justify-center space-x-3 mt-4">
+            <svg class="w-6 h-6 flex-none fill-red-100 stroke-red-500 stroke-2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="11" />
+              <path d="m8 13 2.165 2.165a1 1 0 0 0 1.521-.126L16 9" fill="none" />
+            </svg>
+            <svg class="w-6 h-6 flex-none fill-sky-100 stroke-sky-500 stroke-2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="11" />
+            </svg>
+            <svg class="w-6 h-6 flex-none fill-violet-100 stroke-violet-500 stroke-2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="11" />
+            </svg>
+          </div>
+          <!-- /colors -->
+
+          <!-- content -->
+          <div class="row-span-full col-span-1 col-start-2">
+            <div class="pb-8 text-base leading-7 space-y-6 text-gray-600">
+              <h2 class="font-bold text-3xl">iPhone 13 Pro Max</h2>
+              <p>Top toestel voor een <em>betaalbare</em> prijs!</p>
+              <ul class="space-y-4">
+                <li class="flex items-center">
+                  <svg class="w-6 h-6 flex-none fill-sky-100 stroke-sky-500 stroke-2" stroke-linecap="round" stroke-linejoin="round">
+                    <!-- <circle cx="12" cy="12" r="11" /> -->
+                    <path d="m8 13 2.165 2.165a1 1 0 0 0 1.521-.126L16 9" fill="none" />
+                  </svg>
+                  <p class="ml-4">Bijbetaling toestel €0,00</p>
+                </li>
+                <li class="flex items-center">
+                  <svg class="w-6 h-6 flex-none fill-sky-100 stroke-sky-500 stroke-2" stroke-linecap="round" stroke-linejoin="round">
+                    <!-- <circle cx="12" cy="12" r="11" /> -->
+                    <path d="m8 13 2.165 2.165a1 1 0 0 0 1.521-.126L16 9" fill="none" />
+                  </svg>
+                  <p class="ml-4">excl. eenmalige kosten</p>
+                </li>
+                <li class="flex items-center">
+                  <svg class="w-6 h-6 flex-none fill-sky-100 stroke-sky-500 stroke-2" stroke-linecap="round" stroke-linejoin="round">
+                    <!-- <circle cx="12" cy="12" r="11" /> -->
+                    <path d="m8 13 2.165 2.165a1 1 0 0 0 1.521-.126L16 9" fill="none" />
+                  </svg>
+                  <p class="ml-4">8 GB + 120 min. bellen</p>
+                </li>
+              </ul>
+
+              <div>
+                <span class="text-4xl font-bold">€25,50</span>
+                <span class="text-xs font-light">per maand</span>
+              </div>
+            </div>
+          </div>
+          <!-- /content -->
+
+          <!-- CTA -->
+
+          <div class="row-start-auto col-span-full">
+            <!-- Custom buttom with css custom properties and custom colors -->
+            <button
+              class="relative block w-full text-xl font-bold leading-none uppercase tracking-wider py-4 px-10 top-0 text-center cursor-pointer rounded-lg bg-[#66c] shadow-sm [--tw-shadow:0_5px_#5b5bb7] transition-all hover:bg-[#5b5bb7] hover:[--tw-shadow:0_5px_#484889] active:shadow-none active:top-1"
+            >
+              kies deze
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
