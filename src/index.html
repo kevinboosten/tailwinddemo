@@ -20,7 +20,7 @@
     <div class="min-h-screen bg-gray-50 py-6 flex flex-col justify-center relative overflow-hidden sm:py-12 dark:bg-gray-700">
       <!-- product card -->
       <div
-        class="relative px-6 pt-10 pb-8 bg-red shadow-xl ring-1 ring-gray-900/5 sm:max-w-lg sm:mx-auto sm:rounded-lg sm:px-10 dark:bg-neutral-800 dark:shadow-slate-500"
+        class="relative px-6 pt-10 pb-8 bg-red shadow-2xl ring-1 ring-gray-900/5 sm:max-w-lg sm:mx-auto sm:rounded-lg sm:px-10 dark:bg-neutral-800 dark:shadow-neutral-700"
       >
         <div class="max-w-md mx-auto grid grid-flow-col grid-cols-2 grid-rows-2">
           <!-- phone -->
@@ -39,31 +39,70 @@
           <!-- /phone -->
 
           <!-- colors -->
-          <div class="flex justify-center space-x-3 mt-4">
-            <svg
-              class="w-6 h-6 flex-none fill-red-100 stroke-red-500 stroke-2 group cursor-pointer"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <circle cx="12" cy="12" r="11" />
-              <path d="m8 13 2.165 2.165a1 1 0 0 0 1.521-.126L16 9" fill="none" class="hidden group-hover:inline" />
-            </svg>
-            <svg
-              class="w-6 h-6 flex-none fill-sky-100 stroke-sky-500 stroke-2 group cursor-pointer"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <circle cx="12" cy="12" r="11" />
-              <path d="m8 13 2.165 2.165a1 1 0 0 0 1.521-.126L16 9" fill="none" class="hidden group-hover:inline" />
-            </svg>
-            <svg
-              class="w-6 h-6 flex-none fill-violet-100 stroke-violet-500 stroke-2 group cursor-pointer"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <circle cx="12" cy="12" r="11" />
-              <path d="m8 13 2.165 2.165a1 1 0 0 0 1.521-.126L16 9" fill="none" class="hidden group-hover:inline" />
-            </svg>
+          <div class="flex justify-center space-x-3 mt-4 h-min">
+            <label for="color-1" class="group">
+              <input type="radio" name="color" id="color-1" class="appearance-none peer" checked />
+              <svg
+                class="w-6 h-6 flex-none fill-red-100 stroke-red-500 stroke-2 cursor-pointer peer-checked:hidden"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <circle cx="12" cy="12" r="11" />
+                <path d="m8 13 2.165 2.165a1 1 0 0 0 1.521-.126L16 9" fill="none" class="hidden group-hover:inline" />
+              </svg>
+              <!-- TODO: duplicated SVG; can't use group-checked nor peer-checked due to html structure of input with nested element (<path> within the svg) -->
+              <svg
+                class="w-6 h-6 flex-none fill-red-100 stroke-red-500 stroke-2 cursor-pointer hidden peer-checked:block"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <circle cx="12" cy="12" r="11" />
+                <path d="m8 13 2.165 2.165a1 1 0 0 0 1.521-.126L16 9" fill="none" />
+              </svg>
+            </label>
+
+            <label for="color-2" class="group">
+              <input type="radio" name="color" id="color-2" class="appearance-none peer" />
+              <svg
+                class="w-6 h-6 flex-none fill-sky-100 stroke-sky-500 stroke-2 cursor-pointer peer-checked:hidden"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <circle cx="12" cy="12" r="11" />
+                <path d="m8 13 2.165 2.165a1 1 0 0 0 1.521-.126L16 9" fill="none" class="hidden group-hover:inline" />
+              </svg>
+              <!-- TODO: duplicated SVG; can't use group-checked nor peer-checked due to html structure of input with nested element (<path> within the svg) -->
+              <svg
+                class="w-6 h-6 flex-none fill-sky-100 stroke-sky-500 stroke-2 cursor-pointer hidden peer-checked:block"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <circle cx="12" cy="12" r="11" />
+                <path d="m8 13 2.165 2.165a1 1 0 0 0 1.521-.126L16 9" fill="none" />
+              </svg>
+            </label>
+
+            <label for="color-3" class="group">
+              <input type="radio" name="color" id="color-3" class="appearance-none peer" />
+              <svg
+                class="w-6 h-6 flex-none fill-violet-100 stroke-violet-500 stroke-2 cursor-pointer peer-checked:hidden"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <circle cx="12" cy="12" r="11" />
+                <path d="m8 13 2.165 2.165a1 1 0 0 0 1.521-.126L16 9" fill="none" class="hidden group-hover:inline" />
+              </svg>
+              <!-- TODO: duplicated SVG; can't use group-checked nor peer-checked due to html structure of input with nested element (<path> within the svg) -->
+
+              <svg
+                class="w-6 h-6 flex-none fill-violet-100 stroke-violet-500 stroke-2 cursor-pointer hidden peer-checked:block"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <circle cx="12" cy="12" r="11" />
+                <path d="m8 13 2.165 2.165a1 1 0 0 0 1.521-.126L16 9" fill="none" />
+              </svg>
+            </label>
           </div>
           <!-- /colors -->
 
