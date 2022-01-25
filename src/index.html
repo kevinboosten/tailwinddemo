@@ -5,152 +5,164 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="../dist/output.css" rel="stylesheet" />
     <title>Document</title>
+    <script>
+      function toggleDarkMode() {
+        console.log("toggle dark mode");
+        document.body.classList.toggle("dark");
+        document.getElementById("toggleBtn").classList.toggle("rotate-180");
+      }
+    </script>
   </head>
+
   <body>
-    <!--
-  Welcome to Tailwind Play, the official Tailwind CSS playground!
-
-  Everything here works just like it does when you're running Tailwind locally
-  with a real build pipeline. You can customize your config file, use features
-  like `@apply`, or even add third-party plugins.
-
-  Feel free to play with this example if you're just learning, or trash it and
-  start from scratch if you know enough to be dangerous. Have fun!
--->
-    <div class="min-h-screen bg-gray-50 py-6 flex flex-col justify-center relative overflow-hidden sm:py-12 dark:bg-gray-700">
-      <!-- product card -->
-      <div
-        class="relative px-6 pt-10 pb-8 bg-red shadow-2xl ring-1 ring-gray-900/5 sm:max-w-lg sm:mx-auto sm:rounded-lg sm:px-10 dark:bg-neutral-800 dark:shadow-neutral-700"
+    <main>
+      <button
+        id="toggleBtn"
+        onclick="toggleDarkMode()"
+        class="bg-transparant absolute left-0 top-0 z-10 m-2 h-auto w-auto text-2xl transition-all"
       >
-        <div class="max-w-md mx-auto grid grid-flow-col grid-cols-2 grid-rows-2">
-          <!-- phone -->
-          <div class="w-3/4 h-full relative cursor-pointer">
-            <img class="h-auto left-0" src="assets/dvi-back_iPhone13_Black_305x450.png" alt="" />
-            <img
-              class="absolute h-auto top-0 left-0 translate-x-8 hover:translate-x-12 transition"
-              src="assets/dvi-front_iPhone13_Black_305x450.png"
-              alt=""
-            />
-          </div>
-          <!-- /phone -->
+        🌗
+      </button>
 
-          <!-- colors -->
-          <div class="flex justify-center space-x-3 mt-4 h-min">
-            <label for="color-1" class="group">
-              <input type="radio" name="color" id="color-1" class="appearance-none peer" checked />
-              <svg
-                class="w-6 h-6 flex-none fill-red-100 stroke-red-500 stroke-2 cursor-pointer peer-checked:hidden"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <circle cx="12" cy="12" r="11" />
-                <path d="m8 13 2.165 2.165a1 1 0 0 0 1.521-.126L16 9" fill="none" class="hidden group-hover:inline" />
-              </svg>
-              <!-- TODO: duplicated SVG; can't use group-checked nor peer-checked due to html structure of input with nested element (<path> within the svg) -->
-              <svg
-                class="w-6 h-6 flex-none fill-red-100 stroke-red-500 stroke-2 cursor-pointer hidden peer-checked:block"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <circle cx="12" cy="12" r="11" />
-                <path d="m8 13 2.165 2.165a1 1 0 0 0 1.521-.126L16 9" fill="none" />
-              </svg>
-            </label>
+      <div
+        class="relative flex min-h-screen flex-col justify-center overflow-hidden bg-gray-50 py-6 transition-all dark:bg-gray-700 sm:py-12"
+      >
+        <!-- product card -->
+        <div
+          class="bg-red relative px-6 pt-10 pb-8 shadow-2xl ring-1 ring-gray-900/5 transition-all dark:bg-neutral-800 dark:shadow-neutral-700 sm:mx-auto sm:max-w-lg sm:rounded-lg sm:px-10"
+        >
+          <div class="mx-auto grid max-w-md grid-flow-col grid-cols-2 grid-rows-2">
+            <!-- phone -->
+            <div class="relative h-full w-3/4 cursor-pointer">
+              <img class="left-0 h-auto" src="assets/dvi-back_iPhone13_Black_305x450.png" alt="" />
+              <img
+                class="absolute top-0 left-0 h-auto translate-x-8 transition hover:translate-x-12"
+                src="assets/dvi-front_iPhone13_Black_305x450.png"
+                alt=""
+              />
+            </div>
+            <!-- /phone -->
 
-            <label for="color-2" class="group">
-              <input type="radio" name="color" id="color-2" class="appearance-none peer" />
-              <svg
-                class="w-6 h-6 flex-none fill-sky-100 stroke-sky-500 stroke-2 cursor-pointer peer-checked:hidden"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <circle cx="12" cy="12" r="11" />
-                <path d="m8 13 2.165 2.165a1 1 0 0 0 1.521-.126L16 9" fill="none" class="hidden group-hover:inline" />
-              </svg>
-              <!-- TODO: duplicated SVG; can't use group-checked nor peer-checked due to html structure of input with nested element (<path> within the svg) -->
-              <svg
-                class="w-6 h-6 flex-none fill-sky-100 stroke-sky-500 stroke-2 cursor-pointer hidden peer-checked:block"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <circle cx="12" cy="12" r="11" />
-                <path d="m8 13 2.165 2.165a1 1 0 0 0 1.521-.126L16 9" fill="none" />
-              </svg>
-            </label>
+            <!-- colors -->
+            <div class="mt-4 flex h-min justify-center space-x-3">
+              <label for="color-1" class="group">
+                <input type="radio" name="color" id="color-1" class="peer appearance-none" checked />
+                <svg
+                  class="h-6 w-6 flex-none cursor-pointer fill-red-100 stroke-red-500 stroke-2 peer-checked:hidden"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <circle cx="12" cy="12" r="11" />
+                  <path d="m8 13 2.165 2.165a1 1 0 0 0 1.521-.126L16 9" fill="none" class="hidden group-hover:inline" />
+                </svg>
+                <!-- TODO: duplicated SVG; can't use group-checked nor peer-checked due to html structure of input with nested element (<path> within the svg) -->
+                <svg
+                  class="hidden h-6 w-6 flex-none cursor-pointer fill-red-100 stroke-red-500 stroke-2 peer-checked:block"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <circle cx="12" cy="12" r="11" />
+                  <path d="m8 13 2.165 2.165a1 1 0 0 0 1.521-.126L16 9" fill="none" />
+                </svg>
+              </label>
 
-            <label for="color-3" class="group">
-              <input type="radio" name="color" id="color-3" class="appearance-none peer" />
-              <svg
-                class="w-6 h-6 flex-none fill-violet-100 stroke-violet-500 stroke-2 cursor-pointer peer-checked:hidden"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <circle cx="12" cy="12" r="11" />
-                <path d="m8 13 2.165 2.165a1 1 0 0 0 1.521-.126L16 9" fill="none" class="hidden group-hover:inline" />
-              </svg>
-              <!-- TODO: duplicated SVG; can't use group-checked nor peer-checked due to html structure of input with nested element (<path> within the svg) -->
+              <label for="color-2" class="group">
+                <input type="radio" name="color" id="color-2" class="peer appearance-none" />
+                <svg
+                  class="h-6 w-6 flex-none cursor-pointer fill-sky-100 stroke-sky-500 stroke-2 peer-checked:hidden"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <circle cx="12" cy="12" r="11" />
+                  <path d="m8 13 2.165 2.165a1 1 0 0 0 1.521-.126L16 9" fill="none" class="hidden group-hover:inline" />
+                </svg>
+                <!-- TODO: duplicated SVG; can't use group-checked nor peer-checked due to html structure of input with nested element (<path> within the svg) -->
+                <svg
+                  class="hidden h-6 w-6 flex-none cursor-pointer fill-sky-100 stroke-sky-500 stroke-2 peer-checked:block"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <circle cx="12" cy="12" r="11" />
+                  <path d="m8 13 2.165 2.165a1 1 0 0 0 1.521-.126L16 9" fill="none" />
+                </svg>
+              </label>
 
-              <svg
-                class="w-6 h-6 flex-none fill-violet-100 stroke-violet-500 stroke-2 cursor-pointer hidden peer-checked:block"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <circle cx="12" cy="12" r="11" />
-                <path d="m8 13 2.165 2.165a1 1 0 0 0 1.521-.126L16 9" fill="none" />
-              </svg>
-            </label>
-          </div>
-          <!-- /colors -->
+              <label for="color-3" class="group">
+                <input type="radio" name="color" id="color-3" class="peer appearance-none" />
+                <svg
+                  class="h-6 w-6 flex-none cursor-pointer fill-violet-100 stroke-violet-500 stroke-2 peer-checked:hidden"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <circle cx="12" cy="12" r="11" />
+                  <path d="m8 13 2.165 2.165a1 1 0 0 0 1.521-.126L16 9" fill="none" class="hidden group-hover:inline" />
+                </svg>
+                <!-- TODO: duplicated SVG; can't use group-checked nor peer-checked due to html structure of input with nested element (<path> within the svg) -->
 
-          <!-- content -->
-          <div class="row-span-full col-span-1 col-start-2">
-            <div class="pb-8 text-base leading-7 space-y-6 text-gray-600 dark:text-white">
-              <h2 class="font-bold text-3xl">iPhone 13 Pro Max</h2>
-              <p>Top toestel voor een <em>betaalbare</em> prijs!</p>
-              <ul class="space-y-4">
-                <li class="flex items-center">
-                  <svg class="w-6 h-6 flex-none fill-sky-100 stroke-sky-500 stroke-2" stroke-linecap="round" stroke-linejoin="round">
-                    <!-- <circle cx="12" cy="12" r="11" /> -->
-                    <path d="m8 13 2.165 2.165a1 1 0 0 0 1.521-.126L16 9" fill="none" />
-                  </svg>
-                  <p class="ml-4">Bijbetaling toestel €0,00</p>
-                </li>
-                <li class="flex items-center">
-                  <svg class="w-6 h-6 flex-none fill-sky-100 stroke-sky-500 stroke-2" stroke-linecap="round" stroke-linejoin="round">
-                    <!-- <circle cx="12" cy="12" r="11" /> -->
-                    <path d="m8 13 2.165 2.165a1 1 0 0 0 1.521-.126L16 9" fill="none" />
-                  </svg>
-                  <p class="ml-4">excl. eenmalige kosten</p>
-                </li>
-                <li class="flex items-center">
-                  <svg class="w-6 h-6 flex-none fill-sky-100 stroke-sky-500 stroke-2" stroke-linecap="round" stroke-linejoin="round">
-                    <!-- <circle cx="12" cy="12" r="11" /> -->
-                    <path d="m8 13 2.165 2.165a1 1 0 0 0 1.521-.126L16 9" fill="none" />
-                  </svg>
-                  <p class="ml-4">8 GB + 120 min. bellen</p>
-                </li>
-              </ul>
+                <svg
+                  class="hidden h-6 w-6 flex-none cursor-pointer fill-violet-100 stroke-violet-500 stroke-2 peer-checked:block"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <circle cx="12" cy="12" r="11" />
+                  <path d="m8 13 2.165 2.165a1 1 0 0 0 1.521-.126L16 9" fill="none" />
+                </svg>
+              </label>
+            </div>
+            <!-- /colors -->
 
-              <div>
-                <span class="text-4xl font-bold">€25,50</span>
-                <span class="text-xs font-light">per maand</span>
+            <!-- content -->
+            <div class="col-span-1 col-start-2 row-span-full">
+              <div class="space-y-6 pb-8 text-base leading-7 text-gray-600 transition-all dark:text-white">
+                <h2 class="text-3xl font-bold">iPhone 13 Pro Max</h2>
+                <p>Top toestel voor een <em>betaalbare</em> prijs!</p>
+                <ul class="space-y-4">
+                  <li class="flex items-center">
+                    <svg class="h-6 w-6 flex-none fill-sky-100 stroke-sky-500 stroke-2" stroke-linecap="round" stroke-linejoin="round">
+                      <!-- <circle cx="12" cy="12" r="11" /> -->
+                      <path d="m8 13 2.165 2.165a1 1 0 0 0 1.521-.126L16 9" fill="none" />
+                    </svg>
+                    <p class="ml-4">Bijbetaling toestel €0,00</p>
+                  </li>
+                  <li class="flex items-center">
+                    <svg class="h-6 w-6 flex-none fill-sky-100 stroke-sky-500 stroke-2" stroke-linecap="round" stroke-linejoin="round">
+                      <!-- <circle cx="12" cy="12" r="11" /> -->
+                      <path d="m8 13 2.165 2.165a1 1 0 0 0 1.521-.126L16 9" fill="none" />
+                    </svg>
+                    <p class="ml-4">excl. eenmalige kosten</p>
+                  </li>
+                  <li class="flex items-center">
+                    <svg class="h-6 w-6 flex-none fill-sky-100 stroke-sky-500 stroke-2" stroke-linecap="round" stroke-linejoin="round">
+                      <!-- <circle cx="12" cy="12" r="11" /> -->
+                      <path d="m8 13 2.165 2.165a1 1 0 0 0 1.521-.126L16 9" fill="none" />
+                    </svg>
+                    <p class="ml-4">8 GB + 120 min. bellen</p>
+                  </li>
+                </ul>
+
+                <div>
+                  <span class="text-4xl font-bold">€25,50</span>
+                  <span class="text-xs font-light">per maand</span>
+                </div>
               </div>
             </div>
-          </div>
-          <!-- /content -->
+            <!-- /content -->
 
-          <!-- CTA -->
+            <!-- CTA -->
 
-          <div class="row-start-auto col-span-full">
-            <!-- Custom buttom with css custom properties and custom colors -->
-            <button
-              class="relative block w-full text-xl font-bold leading-none uppercase tracking-wider py-4 px-10 top-0 text-center cursor-pointer rounded-lg bg-[#66c] shadow-sm [--tw-shadow:0_5px_#5b5bb7] transition-all hover:bg-[#5b5bb7] hover:[--tw-shadow:0_5px_#484889] active:shadow-none active:top-1 dark:text-white text-white"
-            >
-              kies deze
-            </button>
+            <div class="col-span-full row-start-auto">
+              <!-- Custom buttom with css custom properties and custom colors -->
+              <button
+                class="relative top-0 block w-full cursor-pointer rounded-lg bg-[#66c] py-4 px-10 text-center text-xl font-bold uppercase leading-none tracking-wider text-white shadow-sm transition-all [--tw-shadow:0_5px_#5b5bb7] hover:bg-[#5b5bb7] hover:[--tw-shadow:0_5px_#484889] active:top-1 active:shadow-none dark:text-white"
+              >
+                kies deze
+              </button>
+
+              <!-- <button class="btn-primary my-2">primary button</button> -->
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </main>
   </body>
 </html>

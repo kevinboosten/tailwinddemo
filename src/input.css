@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .btn-primary {
+    @apply relative top-0 block w-full cursor-pointer rounded-lg bg-[#66c] py-4 px-10 text-center text-xl font-bold uppercase leading-none tracking-wider text-white shadow-sm transition-all [--tw-shadow:0_5px_#5b5bb7] hover:bg-[#5b5bb7] hover:[--tw-shadow:0_5px_#484889] active:top-1 active:shadow-none dark:text-white;
+  }
+}
